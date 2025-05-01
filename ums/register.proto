@@ -30,6 +30,6 @@ message RegisterUserDetailsResponse {
 	int64 fk = 12;
 }
 
-service UserService {
+service RegisterService {
     rpc RegisterUserDetails(RegisterUserDetailsRequest) returns (RegisterUserDetailsResponse);
 }

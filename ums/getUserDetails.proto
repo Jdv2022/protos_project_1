@@ -20,6 +20,6 @@ message GetUserDetailsResponse {
 	int64 fk = 12;
 }
 
-service UserService {
+service GetUserDetailsService {
     rpc GetUserDetails(GetUserDetailsRequest) returns (GetUserDetailsResponse);
 }
