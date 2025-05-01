@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package getUserDetails;
 
-option php_namespace = "App\\Grpc\\GetUserDetails";
+option php_namespace = "grpc\\GetUserDetails";
 
 message GetUserDetailsRequest {
 	int64 fk = 12;

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package register;
 
-option php_namespace = "App\\Grpc\\Register";
+option php_namespace = "grpc\\Register";
 
 message RegisterUserDetailsRequest {
 	string first_name = 1;
