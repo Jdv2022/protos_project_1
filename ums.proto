@@ -32,6 +32,7 @@ message RegisterUserDetailsRequest {
 	string gender = 9;
 	string profile_image = 10;
 	string action_by_user_id = 11;
+	int64 fk = 12;
 }
 
 message RegisterUserDetailsResponse {
@@ -45,6 +46,7 @@ message RegisterUserDetailsResponse {
 	string gender = 9;
 	string profile_image = 10;
 	string action_by_user_id = 11;
+	int64 fk = 12;
 }
 
 service UserService {
