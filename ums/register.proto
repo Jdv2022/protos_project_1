@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package users;
+package register;
 
 message RegisterUserDetailsRequest {
 	string first_name = 1;

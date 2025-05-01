@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package users;
+package getUserDetails;
 
 message GetUserDetailsRequest {
 	int64 fk = 12;
