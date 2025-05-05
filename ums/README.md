@@ -1,9 +1,10 @@
 /* SERVER
 
  	protoc \
+  --proto_path=protos_project_1 \
   --plugin=protoc-gen-php-grpc=/usr/local/bin/protoc-gen-php-grpc \
-  --php_out=app/Grpc \
-  --php-grpc_out=app/Grpc \
+  --php_out=. \
+  --php-grpc_out=. \
   protos_project_1/ums/*.proto
 
 */
