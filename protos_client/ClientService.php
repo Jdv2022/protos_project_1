@@ -2,18 +2,18 @@
 
 namespace protos_project_1\protos_client;
 
-use Users\UserServiceClient;
+use grpc\GetUserDetails\GetUserDetailsServiceClient;
+use grpc\Register\RegisterServiceClient;
 
 class ClientService {
 
-    public function userServiceClient(): UserServiceClient {
-        return new UserServiceClient(
-            '127.0.0.1:9001',
-            [
-                'credentials' => \Grpc\ChannelCredentials::createInsecure(),
-            ]
-        );
-    }
+    public function getUserServiceClient(): GetUserDetailsServiceClient {
+		return $this->userManagementServiceClient(GetUserDetailsServiceClient::class);
+	}
+	
+	public function getRegisterServiceClient(): RegisterServiceClient {
+		return $this->userManagementServiceClient(RegisterServiceClient::class);
+	}
 
 	function grpcMessageToArray($message): array {
 		$data = [];
@@ -25,6 +25,16 @@ class ClientService {
 			}
 		}
 		return $data;
+	}
+
+
+	protected function userManagementServiceClient(string $class): mixed {
+		return new $class(
+			'127.0.0.1:9001',
+			[
+				'credentials' => \Grpc\ChannelCredentials::createInsecure(),
+			]
+		);
 	}
 
 }
