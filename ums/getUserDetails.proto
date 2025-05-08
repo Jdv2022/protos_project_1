@@ -16,9 +16,7 @@ message GetUserDetailsResponse {
 	string user_details_email = 5;
 	string user_details_phone = 6;
 	string user_details_address = 7;
-	string user_details_country = 8;
 	string user_details_date_of_birth = 9; 
-	int32 user_details_age = 10;
 	string user_details_gender = 11;
 	string user_details_profile_image = 12;
 
