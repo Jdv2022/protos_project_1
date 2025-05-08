@@ -21,7 +21,7 @@ class ClientService {
 		foreach ($methods as $method) {
 			if (str_starts_with($method, 'get')) {
 				$property = lcfirst(substr($method, 3));
-				$data[$property] = $message->$method();
+				$data[$method] = $message->$method();
 			}
 		}
 		return $data;
