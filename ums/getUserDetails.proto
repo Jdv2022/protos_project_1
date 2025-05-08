@@ -35,7 +35,7 @@ message GetUserDetailsResponse {
 	uint64 user_details_user_id = 24;
 
 	uint64 user_roles_id = 25;
-	string user_roles_name = 26;
+	string user_roles_type_1 = 26;
 	string user_roles_description = 27;
 	string user_roles_level = 28;
 	bool user_roles_status = 29;
