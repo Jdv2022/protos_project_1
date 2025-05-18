@@ -15,7 +15,7 @@ message RegisterUserDetailsRequest {
 	string date_of_birth = 8;
 	string gender = 9;
 	string profile_image = 10;
-	string action_by_user_id = 11;
+	int64 action_by_user_id = 11;
 	int64 fk = 12;
 }
 
