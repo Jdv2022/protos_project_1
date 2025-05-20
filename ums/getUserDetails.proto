@@ -18,8 +18,9 @@ message GetUserDetailsResponse {
 	string user_details_department = 7;
 	string user_details_address = 8;
 	string user_details_date_of_birth = 9; 
-	string user_details_gender = 11;
-	string user_details_profile_image = 12;
+	string user_details_gender = 10;
+	string user_details_profile_image_URL = 11;
+	string user_details_profile_image_name = 12;
 
 	string user_details_created_at = 13;
 	string user_details_created_at_timezone = 14;
