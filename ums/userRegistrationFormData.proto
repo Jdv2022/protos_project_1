@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package userRegistrationFormData;
+
+option php_namespace = "grpc\\userRegistrationFormData";
+
+message UserRegistrationFormDataRequest {
+	int64 action_by_user_id = 12;
+}
+
+message UserRegistrationFormDataResponse {
+	repeated string departments = 1;
+	repeated string roles = 2;
+}
+
+service UserRegistrationFormDataService {
+    rpc UserRegistrationFormData(UserRegistrationFormDataRequest) returns (UserRegistrationFormDataResponse);
+}
