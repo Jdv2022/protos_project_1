@@ -4,6 +4,7 @@ namespace protos_project_1\protos_client;
 
 use grpc\GetUserDetails\GetUserDetailsServiceClient;
 use grpc\Register\RegisterServiceClient;
+use grpc\userRegistrationFormData\UserRegistrationFormDataServiceClient;
 
 class ClientService {
 
@@ -13,6 +14,10 @@ class ClientService {
 	
 	public function getRegisterServiceClient(): RegisterServiceClient {
 		return $this->userManagementServiceClient(RegisterServiceClient::class);
+	}
+
+	public function getRegistrationFormDataClient(): UserRegistrationFormDataServiceClient {
+		return $this->userManagementServiceClient(UserRegistrationFormDataServiceClient::class);
 	}
 
 	function grpcMessageToArray($message): array {

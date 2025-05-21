@@ -9,8 +9,8 @@ message UserRegistrationFormDataRequest {
 }
 
 message UserRegistrationFormDataResponse {
-	repeated string departments = 1;
-	repeated string roles = 2;
+ 	string departments = 1;
+ 	string roles = 2;
 }
 
 service UserRegistrationFormDataService {
