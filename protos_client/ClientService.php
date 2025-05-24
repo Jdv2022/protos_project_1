@@ -19,6 +19,7 @@ class ClientService {
 	public function getRegistrationFormDataClient(): UserRegistrationFormDataServiceClient {
 		return $this->userManagementServiceClient(UserRegistrationFormDataServiceClient::class);
 	}
+	
 
 	function grpcMessageToArray($message): array {
 		$data = [];

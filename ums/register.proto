@@ -14,11 +14,12 @@ message RegisterUserDetailsRequest {
 	string department = 7;
 	string date_of_birth = 8;
 	string gender = 9;
-	string profile_image = 10;
-	string action_by_user_id = 11;
-	string set_profile_image_u_r_l = 12;
-	string set_profile_image_Name = 13;
-	int64 fk = 14;
+	string position = 10;
+	string profile_image = 11;
+	string action_by_user_id = 12;
+	string set_profile_image_u_r_l = 13;
+	string set_profile_image_Name = 14;
+	int64 fk = 15;
 }
 
 message RegisterUserDetailsResponse {
