@@ -18,15 +18,80 @@ message User {
 	string user_details_profile_image_URL = 11;
 	string user_details_profile_image_name = 12;
 	string user_details_created_at = 13;
+	string user_details_created_at_timezone = 14;
+	int32 user_details_created_by_user_id = 15;
 	string user_details_created_by_username = 16;
 	string user_details_created_by_user_type = 17;
 	string user_details_updated_at = 18;
+	string user_details_updated_at_timezone = 19;
+	int32 user_details_updated_by_user_id = 20;
 	string user_details_updated_by_username = 21;
 	string user_details_updated_by_user_type = 22;
+	bool user_details_enabled = 23;
+	uint64 user_details_user_id = 24;
 	
+	uint64 user_roles_id = 25;
 	string user_roles_type_1 = 26;
+	string user_roles_description = 27;
+	string user_roles_level = 28;
+	bool user_roles_status = 29;
+	string user_roles_created_at = 30;
+	string user_roles_created_at_timezone = 31;
+	int32 user_roles_created_by_user_id = 32;
+	string user_roles_created_by_username = 33;
+	string user_roles_created_by_user_type = 34;
+	string user_roles_updated_at = 35;
+	string user_roles_updated_at_timezone = 36;
+	int32 user_roles_updated_by_user_id = 37;
+	string user_roles_updated_by_username = 38;
+	string user_roles_updated_by_user_type = 39;
+	bool user_roles_enabled = 40;
 
+	uint64 user_detail_user_roles_id = 41;
+	string user_detail_user_roles_created_at = 42;
+	string user_detail_user_roles_created_at_timezone = 43;
+	int32 user_detail_user_roles_created_by_user_id = 44;
+	string user_detail_user_roles_created_by_username = 45;
+	string user_detail_user_roles_created_by_user_type = 46;
+	string user_detail_user_roles_updated_at = 47;
+	string user_detail_user_roles_updated_at_timezone = 48;
+	int32 user_detail_user_roles_updated_by_user_id = 49;
+	string user_detail_user_roles_updated_by_username = 50;
+	string user_detail_user_roles_updated_by_user_type = 51;
+	bool user_detail_user_roles_enabled = 52;
+	uint64 user_detail_user_roles_user_detail_id = 53;
+	uint64 user_detail_user_roles_user_role_id = 54;
+
+	uint64 user_departments_id = 55;
 	string user_departments_department_name = 56;
+	string user_departments_description = 57;
+	string user_departments_level = 58;
+	bool user_departments_status = 59;
+	string user_departments_created_at = 60;
+	string user_departments_created_at_timezone = 61;
+	int32 user_departments_created_by_user_id = 62;
+	string user_departments_created_by_username = 63;
+	string user_departments_created_by_user_type = 64;
+	string user_departments_updated_at = 65;
+	string user_departments_updated_at_timezone = 66;
+	int32 user_departments_updated_by_user_id = 67;
+	string user_departments_updated_by_username = 68;
+	string user_departments_updated_by_user_type = 69;
+	bool user_departments_enabled = 70;
+
+	string user_detail_user_departments_created_at = 72;
+	string user_detail_user_departments_created_at_timezone = 73;
+	int32 user_detail_user_departments_created_by_user_id = 74;
+	string user_detail_user_departments_created_by_username = 75;
+	string user_detail_user_departments_created_by_user_type = 76;
+	string user_detail_user_departments_updated_at = 77;
+	string user_detail_user_departments_updated_at_timezone = 78;
+	int32 user_detail_user_departments_updated_by_user_id = 79;
+	string user_detail_user_departments_updated_by_username = 80;
+	string user_detail_user_departments_updated_by_user_type = 81;
+	bool user_detail_user_departments_enabled = 82;
+	uint64 user_detail_user_departments_user_detail_id = 83;
+	uint64 user_detail_user_departments_user_department_id = 84;
 }
 
 message GetUsersRequest {
