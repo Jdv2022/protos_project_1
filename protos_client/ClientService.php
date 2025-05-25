@@ -19,20 +19,6 @@ class ClientService {
 	public function getRegistrationFormDataClient(): UserRegistrationFormDataServiceClient {
 		return $this->userManagementServiceClient(UserRegistrationFormDataServiceClient::class);
 	}
-	
-
-	function grpcMessageToArray($message): array {
-		$data = [];
-		$methods = get_class_methods($message);
-		foreach ($methods as $method) {
-			if (str_starts_with($method, 'get')) {
-				$property = lcfirst(substr($method, 3));
-				$data[$method] = $message->$method();
-			}
-		}
-		return $data;
-	}
-
 
 	protected function userManagementServiceClient(string $class): mixed {
 		return new $class(

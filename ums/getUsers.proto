@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package getUsers;
+
+option php_namespace = "grpc\\getUsers";
+
+message User {
+	uint64 user_details_id = 1;
+	string user_details_first_name = 2;
+	string user_details_middle_name = 3;
+	string user_details_last_name = 4;
+	string user_details_email = 5;
+	string user_details_phone = 6;
+	string user_details_department = 7;
+	string user_details_address = 8;
+	string user_details_date_of_birth = 9; 
+	string user_details_gender = 10;
+	string user_details_profile_image_URL = 11;
+	string user_details_profile_image_name = 12;
+	string user_details_created_at = 13;
+	string user_details_created_by_username = 16;
+	string user_details_created_by_user_type = 17;
+	string user_details_updated_at = 18;
+	string user_details_updated_by_username = 21;
+	string user_details_updated_by_user_type = 22;
+	
+	string user_roles_type_1 = 26;
+
+	string user_departments_department_name = 56;
+}
+
+message GetUsersRequest {
+	int64 action_by_user_id = 1;
+}
+
+message GetUsersResponse {
+	repeated User users = 1;
+}
+  
+service GetUsersService {
+    rpc GetUsers(GetUsersRequest) returns (GetUsersResponse);
+}
