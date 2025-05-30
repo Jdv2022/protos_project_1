@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package userClockIn;
+
+option php_namespace = "grpc\\userClockIn";
+
+message UserClockInRequest {
+	int64 fk = 15;
+}
+
+message UserClockOutResponse {
+	bool result = 1;
+}
+  
+
+service UserClockInService {
+    rpc RegisterUserClockIn(UserClockInRequest) returns (UserClockOutResponse);
+}
