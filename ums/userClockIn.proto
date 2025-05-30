@@ -15,5 +15,5 @@ message UserClockOutResponse {
   
 
 service UserClockInService {
-    rpc RegisterUserClockIn(UserClockInRequest) returns (UserClockOutResponse);
+    rpc UserClockInService(UserClockInRequest) returns (UserClockOutResponse);
 }
