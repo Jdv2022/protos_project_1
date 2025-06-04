@@ -14,6 +14,6 @@ message GetAttendanceResponse {
 	string attendance_status = 3;
 }
 
-service GetUserDetailsService {
+service GetAttendance {
     rpc GetAttendance(GetAttendanceRequest) returns (GetAttendanceResponse);
 }

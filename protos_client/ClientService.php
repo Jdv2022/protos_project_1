@@ -7,6 +7,7 @@ use grpc\Register\RegisterServiceClient;
 use grpc\userRegistrationFormData\UserRegistrationFormDataServiceClient;
 use grpc\getUsers\GetUsersServiceClient;
 use grpc\userClockIn\UserClockInServiceClient;
+use grpc\userAttendance\GetUserDetailsServiceClient;
 
 class ClientService {
 	// UMS
@@ -27,6 +28,10 @@ class ClientService {
 	}
 	// UMS
 	public function clockIn(): UserClockInServiceClient {
+		return $this->userManagementServiceClient(UserClockInServiceClient::class);
+	}
+	// UMS
+	public function getAttendance(): UserClockInServiceClient {
 		return $this->userManagementServiceClient(UserClockInServiceClient::class);
 	}
 
