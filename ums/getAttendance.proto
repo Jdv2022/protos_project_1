@@ -6,7 +6,6 @@ option php_namespace = "grpc\\getAttendance";
 
 message GetAttendanceRequest {
 	int64 fk = 1;
-	string time_zone = 2;
 }
 
 message GetAttendanceResponse {
