@@ -20,6 +20,7 @@ message RegisterUserDetailsRequest {
 	string set_profile_image_u_r_l = 13;
 	string set_profile_image_Name = 14;
 	int64 fk = 15;
+	string timezone = 16;
 }
 
 message RegisterUserDetailsResponse {

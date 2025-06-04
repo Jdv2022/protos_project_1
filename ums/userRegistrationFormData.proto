@@ -11,6 +11,7 @@ message UserRegistrationFormDataRequest {
 message UserRegistrationFormDataResponse {
  	string departments = 1;
  	string roles = 2;
+	string timezone = 3;
 }
 
 service UserRegistrationFormDataService {

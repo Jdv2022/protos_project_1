@@ -96,6 +96,7 @@ message User {
 
 message GetUsersRequest {
 	int64 action_by_user_id = 1;
+	string timezone = 2;
 }
 
 message GetUsersResponse {
