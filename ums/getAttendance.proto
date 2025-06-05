@@ -4,15 +4,19 @@ package getAttendance;
 
 option php_namespace = "grpc\\getAttendance";
 
+message Attendance {
+	uint64 time_in = 1;
+	string time_out = 2;
+	string attendance_status = 3;
+}
+
 message GetAttendanceRequest {
 	int64 fk = 1;
 	string timezone = 2;
 }
 
 message GetAttendanceResponse {
-	uint64 time_in = 1;
-	string time_out = 2;
-	string attendance_status = 3;
+	repeated Attendance attendance = 1;
 }
 
 service GetAttendance {
