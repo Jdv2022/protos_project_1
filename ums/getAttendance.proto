@@ -5,7 +5,7 @@ package getAttendance;
 option php_namespace = "grpc\\getAttendance";
 
 message Attendance {
-	uint64 time_in = 1;
+	string time_in = 1;
 	string time_out = 2;
 	string attendance_status = 3;
 }
