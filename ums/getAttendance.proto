@@ -8,13 +8,13 @@ message Attendance {
 	string time_in = 1;
 	string time_out = 2;
 	string attendance_status = 3;
+	string created_at = 4;
 }
 
 message GetAttendanceRequest {
 	int64 fk = 1;
 	string timezone = 2;
 	string month = 3;
-	string created_at = 4;
 }
 
 message GetAttendanceResponse {
