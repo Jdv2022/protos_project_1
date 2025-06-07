@@ -14,6 +14,7 @@ message GetAttendanceRequest {
 	int64 fk = 1;
 	string timezone = 2;
 	string month = 3;
+	string created_at = 4;
 }
 
 message GetAttendanceResponse {
