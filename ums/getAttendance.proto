@@ -7,8 +7,9 @@ option php_namespace = "grpc\\getAttendance";
 message Attendance {
 	string time_in = 1;
 	string time_out = 2;
-	string attendance_status = 3;
-	string created_at = 4;
+	string time_in_status = 3;
+	string time_out_status = 4;
+	string created_at = 5;
 }
 
 message GetAttendanceRequest {
