@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package userClockOut;
+
+option php_namespace = "grpc\\userClockOut";
+
+message UserClockOutRequest {
+	int64 fk = 1;
+	string timezone = 2;
+}
+
+message UserClockOutResponse {
+	bool result = 1;
+}
+  
+
+service UserClockOutService {
+    rpc SetUserClockOut(UserClockOutRequest) returns (UserClockOutResponse);
+}

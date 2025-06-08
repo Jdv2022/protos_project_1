@@ -9,11 +9,11 @@ message UserClockInRequest {
 	string timezone = 2;
 }
 
-message UserClockOutResponse {
+message UserClockInResponse {
 	bool result = 1;
 }
   
 
 service UserClockInService {
-    rpc UserClockInService(UserClockInRequest) returns (UserClockOutResponse);
+    rpc UserClockInService(UserClockInRequest) returns (UserClockInResponse);
 }
