@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package CreateTeam;
+
+option php_namespace = "grpc\\CreateTeam";
+
+message CreateTeamRequest {
+	int64 action_by_user_id = 1;
+	string team_name = 2;
+	string description = 3;
+}
+
+message CreateTeamResponse {
+	bool result = 1;
+}
+
+service CreateTeamService {
+    rpc CreateTeam(CreateTeamRequest) returns (CreateTeamResponse);
+}
