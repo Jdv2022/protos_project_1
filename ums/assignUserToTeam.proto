@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package AssignUserToTeam;
+
+option php_namespace = "grpc\\AssignUserToTeam";
+
+message fK {
+	int64 fk = 1;
+}
+
+message AssignUserToTeamRequest {
+	int64 action_by_user_id = 1;
+	int64 team_id = 2;
+	repeated fK fk = 3;
+}
+
+message AssignUserToTeamResponse {
+	bool result = 1;
+}
+
+service AssignUserToTeamService {
+    rpc AssignUser(AssignUserToTeamRequest) returns (AssignUserToTeamResponse);
+}
