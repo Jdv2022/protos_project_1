@@ -8,6 +8,7 @@ message CreateTeamRequest {
 	int64 action_by_user_id = 1;
 	string team_name = 2;
 	string description = 3;
+	string time_zone = 4;
 }
 
 message CreateTeamResponse {

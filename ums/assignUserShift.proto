@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package AssignUserShift;
+
+option php_namespace = "grpc\\AssignUserShift";
+
+message AssignUserShiftRequest {
+	int64 action_by_user_id = 1;
+	string shift_id = 2;
+	repeated string user_ids = 3;
+	string timezone = 4;
+}
+
+message AssignUserShiftResponse {
+	bool result = 1;
+}
+
+service AssignUserShiftService {
+    rpc AssignUserShift(AssignUserShiftRequest) returns (AssignUserShiftResponse);
+}

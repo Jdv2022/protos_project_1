@@ -11,7 +11,8 @@ message fK {
 message AssignUserToTeamRequest {
 	int64 action_by_user_id = 1;
 	int64 team_id = 2;
-	repeated fK fk = 3;
+	string timezone = 3;
+	repeated fK fk = 4;
 }
 
 message AssignUserToTeamResponse {
