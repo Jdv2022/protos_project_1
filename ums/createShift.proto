@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package CreateShift;
+
+option php_namespace = "grpc\\CreateShift";
+
+message CreateShiftRequest {
+	string shift_name = 1;
+	string description = 2;
+}
+
+message CreateShiftResponse {
+	bool result = 1;
+}
+
+service CreateShiftService {
+    rpc CreateShift(CreateShiftRequest) returns (CreateShiftResponse);
+}
