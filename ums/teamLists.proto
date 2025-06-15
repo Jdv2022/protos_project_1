@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package TeamLists;
+
+option php_namespace = "grpc\\TeamLists";
+
+message teamLists {
+	int64 id = 1;
+	string team_name = 2;
+	string description = 3;
+	string created_at = 4;
+	string updated_a = 5;
+}
+
+message TeamListsRequest {
+	int64 action_by_user_id = 1;
+}
+
+message TeamListsResponse {
+	repeated teamLists team_lists = 1;
+}
+
+service TeamListsService {
+    rpc TeamLists(TeamListsRequest) returns (TeamListsResponse);
+}
