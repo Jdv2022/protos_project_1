@@ -11,6 +11,7 @@ use grpc\getAttendance\GetAttendanceClient;
 use grpc\userClockOut\UserClockOutServiceClient;
 use grpc\CreateTeam\CreateTeamServiceClient;
 use grpc\AssignUserToTeam\AssignUserToTeamServiceClient;
+use grpc\TeamLists\TeamListsServiceClient;
 
 class ClientService {
 	// UMS
@@ -48,6 +49,10 @@ class ClientService {
 	// UMS
 	public function AssignUserToTeam(): AssignUserToTeamServiceClient {
 		return $this->userManagementServiceClient(AssignUserToTeamServiceClient::class);
+	}
+	// UMS
+	public function TeamListsServiceClient(): TeamListsServiceClient {
+		return $this->userManagementServiceClient(TeamListsServiceClient::class);
 	}
 
 	protected function userManagementServiceClient(string $class): mixed {

@@ -9,7 +9,7 @@ message teamLists {
 	string team_name = 2;
 	string description = 3;
 	string created_at = 4;
-	string updated_a = 5;
+	string updated_at = 5;
 }
 
 message TeamListsRequest {
