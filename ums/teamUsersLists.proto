@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package TeamUsersLists;
+
+option php_namespace = "grpc\\TeamUsersLists";
+
+message teamUsersLists {
+	int64 id = 1;
+	string first_name = 2;
+	string middle_name = 3;
+	string last_name = 4;
+	string position = 5;
+
+	string created_at = 6;
+	string updated_at = 7;
+}
+
+message TeamUsersListsRequest {
+	int64 action_by_user_id = 1;
+	string time_zone = 3;
+	int64 team_id = 4;
+}
+
+message TeamUsersListsResponse {
+	int64 id = 1;
+	string team_name = 2;
+	string description = 3;
+	string created_at = 4;
+	string updated_at = 5;
+	repeated teamUsersLists team_lists = 6;
+}
+
+service TeamListsService {
+    rpc TeamUsersLists(TeamUsersListsRequest) returns (TeamUsersListsResponse);
+}
