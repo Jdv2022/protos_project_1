@@ -10,8 +10,10 @@ use grpc\userClockIn\UserClockInServiceClient;
 use grpc\getAttendance\GetAttendanceClient;
 use grpc\userClockOut\UserClockOutServiceClient;
 use grpc\CreateTeam\CreateTeamServiceClient;
+use grpc\CreateShift\CreateShiftServiceClient;
 use grpc\AssignUserToTeam\AssignUserToTeamServiceClient;
 use grpc\TeamLists\TeamListsServiceClient;
+use grpc\AssignUserShift\AssignUserShiftServiceClient;
 
 class ClientService {
 	// UMS
@@ -53,6 +55,14 @@ class ClientService {
 	// UMS
 	public function TeamListsServiceClient(): TeamListsServiceClient {
 		return $this->userManagementServiceClient(TeamListsServiceClient::class);
+	}
+	// UMS
+	public function CreateUserShiftServiceClient(): CreateShiftServiceClient {
+		return $this->userManagementServiceClient(CreateShiftServiceClient::class);
+	}
+	// UMS
+	public function AssignUserShiftServiceClient(): AssignUserShiftServiceClient {
+		return $this->userManagementServiceClient(AssignUserShiftServiceClient::class);
 	}
 
 	protected function userManagementServiceClient(string $class): mixed {
