@@ -67,7 +67,7 @@ class ClientService {
 
 	protected function userManagementServiceClient(string $class): mixed {
 		return new $class(
-			'127.0.0.1:9001',
+			'ums-app-1:9001',
 			[
 				'credentials' => \Grpc\ChannelCredentials::createInsecure(),
 			]
