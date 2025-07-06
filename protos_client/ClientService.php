@@ -15,6 +15,7 @@ use grpc\AssignUserToTeam\AssignUserToTeamServiceClient;
 use grpc\TeamLists\TeamListsServiceClient;
 use grpc\AssignUserShift\AssignUserShiftServiceClient;
 use grpc\GetArchives\GetArchivesServiceClient;
+use grpc\AddArchive\AddArchiveServiceClient;
 
 class ClientService {
 	// UMS
@@ -70,7 +71,11 @@ class ClientService {
 	public function GetArchivesServiceClient(): GetArchivesServiceClient {
 		return $this->userManagementServiceClient(GetArchivesServiceClient::class);
 	}
-	
+
+	// UMS
+	public function AddArchiveServiceClient(): AddArchiveServiceClient {
+		return $this->userManagementServiceClient(AddArchiveServiceClient::class);
+	}	
 
 	protected function userManagementServiceClient(string $class): mixed {
 		return new $class(
