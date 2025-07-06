@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package GetArchives;
+
+option php_namespace = "grpc\\GetArchives";
+
+message GetArchives {
+	int64 id = 1;
+	string first_name = 2;
+	string middle_name = 3;
+	string last_name = 4;
+	string position = 5;
+	bool archived_reason = 6;
+	string archived_at = 7;
+}
+
+message GetArchivesRequest {
+	int64 action_by_user_id = 1;
+}
+
+message GetArchivesResponse {
+	repeated GetArchives archives = 1;
+}
+  
+service GetArchivesService {
+    rpc GetArchives(GetArchivesRequest) returns (GetArchivesResponse);
+}
