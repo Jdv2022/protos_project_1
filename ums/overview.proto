@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package Overview;
+
+option php_namespace = "grpc\\Overview";
+
+message UserAccessCounter {
+	int64 count = 1;
+	string created_at = 2;
+}
+
+message UserDetail {
+	string date = 1;
+	int64 totalUser = 2;
+}
+
+message UserDetailUserRole {
+	int64 user_role_id = 2;
+	int64 count = 3;
+	string user_role = 4;
+}
+
+message OverviewRequest {
+	int64 action_by_user_id = 1;
+	string timezone = 2;
+}
+
+message OverviewResponse {
+	repeated UserAccessCounter userAccessCounter = 1;
+	repeated UserDetail userDetail = 2;
+	repeated UserDetailUserRole userDetailUserRole = 3;
+}
+
+service OverviewService {
+    rpc Overview(OverviewRequest) returns (OverviewResponse);
+}

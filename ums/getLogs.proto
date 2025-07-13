@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package GetLogs;
+
+option php_namespace = "grpc\\GetLogs";
+
+message Logs {
+	int64 id = 1;
+	string description = 2;
+	string created_at = 3;
+	string created_by =4;
+}
+
+message GetLogsRequest {
+	int64 fk = 1;
+	string timezone = 2;
+	string description = 3;
+	int64 current_page = 4;
+	int64 per_page = 5;
+	string search = 6;
+	string sort = 7;
+	string sort_column = 8;
+}
+
+message GetLogsResponse {
+	repeated Logs logs = 1;
+}
+
+service GetLogsService {
+    rpc GetLogs(GetLogsRequest) returns (GetLogsResponse);
+}
