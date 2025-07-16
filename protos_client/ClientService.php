@@ -17,6 +17,8 @@ use grpc\AssignUserShift\AssignUserShiftServiceClient;
 use grpc\GetArchives\GetArchivesServiceClient;
 use grpc\AddArchive\AddArchiveServiceClient;
 use grpc\RemoveArchive\RemoveArchiveServiceClient;
+use grpc\Overview\OverviewServiceClient;
+use grpc\GetLogs\GetLogsServiceClient;
 
 class ClientService {
 	// UMS
@@ -83,6 +85,16 @@ class ClientService {
 		return $this->userManagementServiceClient(RemoveArchiveServiceClient::class);
 	}	
 
+	// UMS
+	public function OverviewServiceClient(): OverviewServiceClient {
+		return $this->userManagementServiceClient(OverviewServiceClient::class);
+	}	
+
+	// UMS
+	public function GetLogsServiceClient(): GetLogsServiceClient {
+		return $this->userManagementServiceClient(GetLogsServiceClient::class);
+	}	
+	
 	protected function userManagementServiceClient(string $class): mixed {
 		return new $class(
 			'ums-app-1:9001',
