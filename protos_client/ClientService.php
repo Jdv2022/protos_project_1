@@ -21,6 +21,7 @@ use grpc\Overview\OverviewServiceClient;
 use grpc\GetLogs\GetLogsServiceClient;
 use grpc\EditUserDetails\EditUserDetailsServiceClient;
 use grpc\TeamUsersLists\TeamUsersListsServiceClient;
+use grpc\EditTeam\EditTeamServiceClient;
 use grpc\SuggestedMember\SuggestedMemberServiceClient;
 
 class ClientService {
@@ -111,6 +112,11 @@ class ClientService {
 	// UMS
 	public function SuggestedMemberServiceClient(): SuggestedMemberServiceClient {
 		return $this->userManagementServiceClient(SuggestedMemberServiceClient::class);
+	}	
+
+	// UMS
+	public function EditTeamServiceClient(): EditTeamServiceClient {
+		return $this->userManagementServiceClient(EditTeamServiceClient::class);
 	}	
 
 	protected function userManagementServiceClient(string $class): mixed {
