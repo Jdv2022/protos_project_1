@@ -19,6 +19,10 @@ use grpc\AddArchive\AddArchiveServiceClient;
 use grpc\RemoveArchive\RemoveArchiveServiceClient;
 use grpc\Overview\OverviewServiceClient;
 use grpc\GetLogs\GetLogsServiceClient;
+use grpc\EditUserDetails\EditUserDetailsServiceClient;
+use grpc\TeamUsersLists\TeamUsersListsServiceClient;
+use grpc\EditTeam\EditTeamServiceClient;
+use grpc\SuggestedMember\SuggestedMemberServiceClient;
 
 class ClientService {
 	// UMS
@@ -94,7 +98,27 @@ class ClientService {
 	public function GetLogsServiceClient(): GetLogsServiceClient {
 		return $this->userManagementServiceClient(GetLogsServiceClient::class);
 	}	
-	
+
+	// UMS
+	public function EditUserDetailsServiceClient(): EditUserDetailsServiceClient {
+		return $this->userManagementServiceClient(EditUserDetailsServiceClient::class);
+	}	
+
+	// UMS
+	public function TeamUsersListsServiceClient(): TeamUsersListsServiceClient {
+		return $this->userManagementServiceClient(TeamUsersListsServiceClient::class);
+	}	
+
+	// UMS
+	public function SuggestedMemberServiceClient(): SuggestedMemberServiceClient {
+		return $this->userManagementServiceClient(SuggestedMemberServiceClient::class);
+	}	
+
+	// UMS
+	public function EditTeamServiceClient(): EditTeamServiceClient {
+		return $this->userManagementServiceClient(EditTeamServiceClient::class);
+	}	
+
 	protected function userManagementServiceClient(string $class): mixed {
 		return new $class(
 			'ums-app-1:9001',

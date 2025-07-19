@@ -17,8 +17,8 @@ message EditUserDetailsRequest {
 	string position = 10;
 	string profile_image = 11;
 	string action_by_user_id = 12;
-	string set_profile_image_u_r_l = 13;
-	string set_profile_image_Name = 14;
+	string profile_image_u_r_l = 13;
+	string profile_image_Name = 14;
 	int64 fk = 15;
 	string timezone = 16;
 }
