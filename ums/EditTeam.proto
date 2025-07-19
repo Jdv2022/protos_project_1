@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package EditTeam;
+
+option php_namespace = "grpc\\EditTeam";
+
+message EditTeamRequest {
+	int64 action_by_user_id = 1;
+	string team_name = 2;
+	string description = 3;
+	string time_zone = 4;
+	int64 team_id = 5;
+}
+
+message EditTeamResponse {
+	string result = 1;
+}
+
+service EditTeamService {
+    rpc EditTeam(EditTeamRequest) returns (EditTeamResponse);
+}
