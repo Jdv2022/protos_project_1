@@ -12,7 +12,7 @@ message CreateTeamRequest {
 }
 
 message CreateTeamResponse {
-	bool result = 1;
+	string result = 1;
 }
 
 service CreateTeamService {

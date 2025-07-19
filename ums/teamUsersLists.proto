@@ -10,9 +10,11 @@ message teamUsersLists {
 	string middle_name = 3;
 	string last_name = 4;
 	string position = 5;
+	string profile_image_url = 6;
+	string profile_image_name = 7;
 
-	string created_at = 6;
-	string updated_at = 7;
+	string created_at = 8;
+	string updated_at = 9;
 }
 
 message TeamUsersListsRequest {
@@ -30,6 +32,6 @@ message TeamUsersListsResponse {
 	repeated teamUsersLists team_lists = 6;
 }
 
-service TeamListsService {
+service TeamUsersListsService {
     rpc TeamUsersLists(TeamUsersListsRequest) returns (TeamUsersListsResponse);
 }
