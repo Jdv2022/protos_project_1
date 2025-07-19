@@ -8,7 +8,7 @@ message member {
 	int64 id = 1;
 	string name = 2;
 	string department = 3;
-	bool is_on_team = 4;
+	string is_on_team = 4;
 	string profile_image_url = 6;
 	string profile_image_name = 7;
 }
