@@ -22,6 +22,7 @@ use grpc\GetLogs\GetLogsServiceClient;
 use grpc\EditUserDetails\EditUserDetailsServiceClient;
 use grpc\TeamUsersLists\TeamUsersListsServiceClient;
 use grpc\EditTeam\EditTeamServiceClient;
+use grpc\RemoveUserTeam\RemoveUserTeamServiceClient;
 use grpc\SuggestedMember\SuggestedMemberServiceClient;
 
 class ClientService {
@@ -119,6 +120,11 @@ class ClientService {
 		return $this->userManagementServiceClient(EditTeamServiceClient::class);
 	}	
 
+	// UMS
+	public function RemoveUserTeamServiceClient(): RemoveUserTeamServiceClient {
+		return $this->userManagementServiceClient(RemoveUserTeamServiceClient::class);
+	}	
+	
 	protected function userManagementServiceClient(string $class): mixed {
 		return new $class(
 			'ums-app-1:9001',
