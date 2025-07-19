@@ -30,6 +30,6 @@ message TeamUsersListsResponse {
 	repeated teamUsersLists team_lists = 6;
 }
 
-service TeamListsService {
+service TeamUsersListsService {
     rpc TeamUsersLists(TeamUsersListsRequest) returns (TeamUsersListsResponse);
 }
