@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package DeleteTeam;
+
+option php_namespace = "grpc\\DeleteTeam";
+
+message DeleteTeamRequest {
+	int64 action_by_user_id = 1;
+	string team_id = 2;
+	string user_id = 3;
+	string time_zone = 4;
+}
+
+message DeleteTeamResponse {
+	bool result = 1;
+}
+
+service DeleteTeamService {
+    rpc DeleteTeam(DeleteTeamRequest) returns (DeleteTeamResponse);
+}
