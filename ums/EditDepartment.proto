@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package EditDepartment;
+
+option php_namespace = "grpc\\EditDepartment";
+
+message EditDepartmentRequest {
+	int64 action_by_user_id = 1;
+	string department_name = 2;
+	string description = 3;
+	string time_zone = 4;
+	int64 department_id = 5;
+}
+
+message EditDepartmentResponse {
+	string result = 1;
+}
+
+service EditDepartmentService {
+    rpc EditDepartment(EditDepartmentRequest) returns (EditDepartmentResponse);
+}
