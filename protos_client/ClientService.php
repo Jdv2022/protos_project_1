@@ -23,7 +23,11 @@ use grpc\EditUserDetails\EditUserDetailsServiceClient;
 use grpc\TeamUsersLists\TeamUsersListsServiceClient;
 use grpc\EditTeam\EditTeamServiceClient;
 use grpc\RemoveUserTeam\RemoveUserTeamServiceClient;
+use grpc\DeleteTeam\DeleteTeamServiceClient;
+use grpc\GetDepartment\GetDepartmentServiceClient;
 use grpc\SuggestedMember\SuggestedMemberServiceClient;
+use grpc\CreateDepartment\CreateDepartmentServiceClient;
+use grpc\GetDepartmentDetail\GetDepartmentDetailServiceClient;
 
 class ClientService {
 	// UMS
@@ -123,6 +127,26 @@ class ClientService {
 	// UMS
 	public function RemoveUserTeamServiceClient(): RemoveUserTeamServiceClient {
 		return $this->userManagementServiceClient(RemoveUserTeamServiceClient::class);
+	}	
+
+	// UMS
+	public function DeleteTeamServiceClient(): DeleteTeamServiceClient {
+		return $this->userManagementServiceClient(DeleteTeamServiceClient::class);
+	}	
+
+	// UMS
+	public function GetDepartmentServiceClient(): GetDepartmentServiceClient {
+		return $this->userManagementServiceClient(GetDepartmentServiceClient::class);
+	}	
+
+	// UMS
+	public function CreateDepartmentServiceClient(): CreateDepartmentServiceClient {
+		return $this->userManagementServiceClient(CreateDepartmentServiceClient::class);
+	}	
+
+	// UMS
+	public function GetDepartmentDetailServiceClient(): GetDepartmentDetailServiceClient {
+		return $this->userManagementServiceClient(GetDepartmentDetailServiceClient::class);
 	}	
 	
 	protected function userManagementServiceClient(string $class): mixed {
