@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package GetDepartmentDetail;
+
+option php_namespace = "grpc\\GetDepartmentDetail";
+
+message GetDepartmentDetailRequest {
+	int64 action_by_user_id = 1;
+	string department_id = 2;
+	string time_zone = 3;
+}
+
+message GetDepartmentDetailResponse {
+	int64 id = 1;
+	string department_name = 2;
+	string description = 3;
+	string created_at = 4;
+	string updated_at = 5;
+}
+  
+service GetDepartmentDetailService {
+    rpc GetDepartmentDetail(GetDepartmentDetailRequest) returns (GetDepartmentDetailResponse);
+}
