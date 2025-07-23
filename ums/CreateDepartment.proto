@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package CreateDepartment;
+
+option php_namespace = "grpc\\CreateDepartment";
+
+message CreateDepartmentRequest {
+	int64 action_by_user_id = 1;
+	string department_name = 2;
+	string description = 3;
+	string time_zone = 4;
+}
+
+message CreateDepartmentResponse {
+	string result = 1;
+}
+
+service CreateDepartmentService {
+    rpc CreateDepartment(CreateDepartmentRequest) returns (CreateDepartmentResponse);
+}
