@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package DeleteDepartment;
+
+option php_namespace = "grpc\\DeleteDepartment";
+
+message DeleteDepartmentRequest {
+	int64 action_by_user_id = 1;
+	string department_id = 2;
+	string user_id = 3;
+	string time_zone = 4;
+}
+
+message DeleteDepartmentResponse {
+	bool result = 1;
+}
+
+service DeleteDepartmentService {
+    rpc DeleteDepartment(DeleteDepartmentRequest) returns (DeleteDepartmentResponse);
+}
