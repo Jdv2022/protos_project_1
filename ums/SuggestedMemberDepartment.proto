@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package SuggestedMemberDepartment;
+
+option php_namespace = "grpc\\SuggestedMemberDepartment";
+
+message departmentMember {
+	int64 id = 1;
+	string name = 2;
+	string team = 3;
+	string is_on_department = 4;
+	string profile_image_url = 6;
+	string profile_image_name = 7;
+}
+
+message SuggestedMemberDepartmentRequest {
+	int64 action_by_user_id = 1;
+	string time_zone = 3;
+}
+
+message SuggestedMemberDepartmentResponse {
+	repeated departmentMember department_lists = 1;
+}
+
+service SuggestedMemberDepartmentService {
+    rpc SuggestedMemberDepartment(SuggestedMemberDepartmentRequest) returns (SuggestedMemberDepartmentResponse);
+}
