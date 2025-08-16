@@ -28,6 +28,10 @@ use grpc\GetDepartment\GetDepartmentServiceClient;
 use grpc\SuggestedMember\SuggestedMemberServiceClient;
 use grpc\CreateDepartment\CreateDepartmentServiceClient;
 use grpc\GetDepartmentDetail\GetDepartmentDetailServiceClient;
+use grpc\DeleteDepartment\DeleteDepartmentServiceClient;
+use grpc\EditDepartment\EditDepartmentServiceClient;
+use grpc\SuggestedMemberDepartment\SuggestedMemberDepartmentServiceClient;
+use grpc\GetDepartmentMember\GetDepartmentMemberServiceClient;
 
 class ClientService {
 	// UMS
@@ -147,6 +151,26 @@ class ClientService {
 	// UMS
 	public function GetDepartmentDetailServiceClient(): GetDepartmentDetailServiceClient {
 		return $this->userManagementServiceClient(GetDepartmentDetailServiceClient::class);
+	}	
+
+	// UMS
+	public function EditDepartmentServiceClient(): EditDepartmentServiceClient {
+		return $this->userManagementServiceClient(EditDepartmentServiceClient::class);
+	}	
+
+	// UMS
+	public function SuggestedMemberDepartmentServiceClient(): SuggestedMemberDepartmentServiceClient {
+		return $this->userManagementServiceClient(SuggestedMemberDepartmentServiceClient::class);
+	}	
+
+	// UMS
+	public function SuggestedMember(): SuggestedMember {
+		return $this->userManagementServiceClient(SuggestedMember::class);
+	}	
+
+	// UMS
+	public function GetDepartmentMemberServiceClient(): GetDepartmentMemberServiceClient {
+		return $this->userManagementServiceClient(GetDepartmentMemberServiceClient::class);
 	}	
 	
 	protected function userManagementServiceClient(string $class): mixed {
