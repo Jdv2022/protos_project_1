@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package AssignUserToDepartment;
+
+option php_namespace = "grpc\\AssignUserToDepartment";
+
+message fK {
+	int64 fk = 1;
+}
+
+message AssignUserToDepartmentRequest {
+	int64 action_by_user_id = 1;
+	int64 department_id = 2;
+	string timezone = 3;
+	repeated fK fk = 4;
+}
+
+message AssignUserToDepartmentResponse {
+	bool result = 1;
+}
+
+service AssignUserToDepartmentService {
+    rpc AssignUser(AssignUserToDepartmentRequest) returns (AssignUserToDepartmentResponse);
+}
